@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  php_ocr_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php-ocr-container
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    restart: unless-stopped
+
